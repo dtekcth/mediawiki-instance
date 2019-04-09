@@ -1,0 +1,12 @@
+logging: 
+    level: info
+num_workers: ncpu
+worker_heartbeat_timeout: 300000
+services:
+  - module: lib/index.js
+    entrypoint: apiServiceWorker
+    conf:
+        serverPort: 8000
+        mwApis:
+          - uri: 'http://mediawiki/api.php'
+            domain: 'wiki.dtek.se'
