@@ -265,3 +265,9 @@ if ($handle = opendir("/var/www/html/external_extensions")) {
 // END OF configuration for getting the visualeditor and parsoid to work
 // =======================================================================
 // =======================================================================
+//
+
+// Enables different displaytitles than pagename
+$wgAllowDisplayTitle = true;
+
+$wgLocaltimezone = "Europe/Stockholm";
