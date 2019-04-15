@@ -3,7 +3,5 @@
 	url = https://github.com/wikimedia/mediawiki-extensions-UserMerge.git
 [submodule "extensions/VisualEditor"]
 	path = extensions/VisualEditor
-	url = https://github.com/wikimedia/mediawiki-extensions-VisualEditor.git
-[submodule "extensions/WYSIWYG-CKeditor"]
-	path = extensions/WYSIWYG-CKeditor
-	url = https://github.com/Mediawiki-wysiwyg/WYSIWYG-CKeditor.git
+  url = https://github.com/wikimedia/mediawiki-extensions-VisualEditor.git
+  branch = REL1_31
