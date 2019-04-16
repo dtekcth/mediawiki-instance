@@ -22,6 +22,7 @@ services:
       # this yaml and uncomment the following line and use compose to restart
       # the mediawiki service
       - ./LocalSettings.php:/var/www/html/LocalSettings.php
+      - ./sensitiveSettings.php:/var/www/html/sensitiveSettings.php
       - ./rewrite.load:/etc/apache2/mods-enabled/rewrite.load
     environment:
       MW_REST_DOMAIN: wiki.dtek.se
