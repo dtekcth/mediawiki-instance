@@ -1,0 +1,25 @@
+<?php
+// Enable email confirmation
+$wgSMTP = [
+ 'host' => 'ssl://smtp-relay.gmail.com', #googles smtp relay
+ 'IDHost' => 'gmail.com', #gmail
+ 'localhost' => 'wiki.dtek.se',
+ 'port' => 465,
+ 'username' => 'wiki@dtek.se',
+ 'password' => 'Dettalösenordetbehövernogverkligenändras',
+ 'auth' => true
+];
+
+## Database settings
+$wgDBtype = "mysql";
+$wgDBserver = "db";
+$wgDBname = "my_wiki";
+$wgDBuser = "wikiuser";
+$wgDBpassword = "example";
+
+$wgSecretKey = #this should be a 64character long secret key
+
+# Site upgrade key. Must be set to a string (default provided) to turn on the
+# web installer while LocalSettings.php is in place
+
+$wgUpgradeKey = #this is a 16 chatacter upgradekey.
