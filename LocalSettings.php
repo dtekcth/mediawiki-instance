@@ -26,16 +26,6 @@ $wgExtraNamespaces[NS_ARCHIVED] = "Archived";
 define("NS_ARCHIVED_TALK", 3001);
 $wgExtraNamespaces[NS_ARCHIVED_TALK] = "Archived_Talk";
 
-// Namespace for public pages
-define("NS_PUBLIC", 3002);
-$wgExtraNamespaces[NS_PUBLIC] = "Public";
-define("NS_PUBLIC_TALK", 3003);
-$wgExtraNamespaces[NS_PUBLIC_TALK] = "Public_Talk";
-
-// Make this namespace public using the `Whitelist Namespaces` extension
-require_once("extensions/WhitelistNamespaces.php");
-$egNamespaceReadWhitelist = Array(NS_PUBLIC);
-
 
 ## Uncomment this to disable output compression
 # $wgDisableOutputCompression = true;
