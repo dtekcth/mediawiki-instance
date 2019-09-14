@@ -123,7 +123,53 @@ $wgGroupPermissions['*']['createaccount'] = true;
 $wgGroupPermissions['*']['edit'] = false;
 $wgGroupPermissions['*']['read'] = false;
 
-$wgWhitelistRead = array ("Special:CreateAccount");
+$wgWhitelistRead = array (
+    "Special:CreateAccount",
+    "Styrdokument",
+    "Sektionsmötesprotokoll",
+    "Sektionsmöteskallelser",
+    "Styrelsemötesprotokoll",
+    "Gamla_styrelsemötesprotokoll",
+    "Styrelsemötesprotokoll_för_verksamhetsåret_2018/2019",
+    "Styrelsemötesprotokoll_för_verksamhetsåret_2019/2020",
+    "Styret",
+    "Presidiet",
+    "DNS",
+    "Talhenspresidiet",
+    "DRUST",
+    "DAG",
+    "Delta",
+    "D6",
+    "DNollK",
+    "DFoto",
+    "D-Lat",
+    "DBus",
+    "D-lirium",
+    "IDrott",
+    "DAF",
+    "DHack",
+    "Ståthållarämbetet",
+    "DLude",
+    "Datas_Vargbröder",
+    "DBrus",
+    "DMNollK",
+    "DKock",
+    "JämställD",
+    "Øhllista",
+    "Valberedning",
+    "Inval",
+    "Barspeglar",
+    "Mottagning",
+    "File:Amazing_Race.jpeg",
+    "File:Öfningsgasque.jpg",
+    "File:Phaderplugg.jpg",
+    "File:Nollbrickstillverkning.jpg",
+    "File:Nollrocken.jpg2",
+    "Protokoll",
+    "Sektionsmöte",
+    "Category:Grupperingar",
+    "Category:Kommittéer"
+);
 
 ## Default skin: you can change the default skin. Use the internal symbolic
 ## names, ie 'vector', 'monobook':
