@@ -185,8 +185,8 @@ $wgDefaultUserOptions['riched_link_paste_text']       = true;
 wfLoadExtension( 'UserMerge' );
 $wgGroupPermissions['bureaucrat']['usermerge'] = true;
 
-//error_reporting(0);
-//ini_set('display_errors', 0);
+error_reporting(0);
+ini_set('display_errors', 0);
 
 $wgShowExceptionDetails = true;
 $wgShowDBErrorBacktrace = true;

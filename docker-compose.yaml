@@ -17,6 +17,7 @@ services:
       - ./images:/var/www/html/images
       - ./logo.png:/var/www/html/resources/assets/logo.png
       - ./logo.svg:/var/www/html/resources/assets/logo.svg
+      - ./php-conf:/usr/local/etc/php/conf.d/
 
       # After initial setup, download LocalSettings.php to the same directory as
       # this yaml and uncomment the following line and use compose to restart
