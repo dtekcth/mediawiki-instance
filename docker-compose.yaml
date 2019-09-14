@@ -1,9 +1,10 @@
 version: '3'
 services:
   mediawiki:
+    container_name: dtekwiki
     build: .
     image: dtek/mediawiki:latest
-    restart: always
+    restart: unless-stopped
     ports:
       - 8081:80
     depends_on:
@@ -28,8 +29,9 @@ services:
     environment:
       MW_REST_DOMAIN: wiki.dtek.se
   db:
+    container_name: dtekwiki-mariadb
     image: mariadb
-    restart: always
+    restart: unless-stopped
     environment:
       # @see https://phabricator.wikimedia.org/source/mediawiki/browse/master/includes/DefaultSettings.php
       MYSQL_DATABASE: my_wiki
@@ -38,9 +40,11 @@ services:
       MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
     volumes:
       - ./mariadb/data:/var/lib/mysql
+
   parsoid:
+    container_name: dtekwiki-parsoid
     image: thenets/parsoid:0.10.0
-    restart: always
+    restart: unless-stopped
     volumes:
       - ./run-parsoid.sh:/run-parsoid.sh
     environment:

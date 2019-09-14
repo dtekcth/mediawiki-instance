@@ -62,6 +62,7 @@ $wgPasswordSender = "wiki@dtek.se";
 $wgEnotifUserTalk = false; # UPO
 $wgEnotifWatchlist = true; # UPO
 $wgEmailAuthentication = true;
+$wgEmailConfirmToEdit = true;
 
 
 # MySQL specific settings
@@ -241,7 +242,7 @@ function abortOnBadDomain($user, &$message) {
 			}
 		}
 	}
-	$message = "You need a whitelisted email address";
+	$message = "You need a whitelisted chalmers email address";
 
 	return false;
 }
@@ -314,5 +315,7 @@ if ($handle = opendir("/var/www/html/external_extensions")) {
 
 // Enables different displaytitles than pagename
 $wgAllowDisplayTitle = true;
+// Allow names to be not only be normalizations
+$wgRestrictDisplayTitle = false;
 
 $wgLocaltimezone = "Europe/Stockholm";
