@@ -1,4 +1,4 @@
-FROM mediawiki
+FROM mediawiki:1.39.3
 
 WORKDIR /var/www/html/temp
 
@@ -7,7 +7,7 @@ COPY ./extensions ./extensions
 
 WORKDIR /var/www/html/temp
 RUN cp extensions/UserMerge ../extensions/UserMerge -r
-RUN cp extensions/VisualEditor ../extensions/VisualEditor -r
+# RUN cp extensions/VisualEditor ../extensions/VisualEditor -r
 
 WORKDIR /var/www/html
 RUN rm temp -r

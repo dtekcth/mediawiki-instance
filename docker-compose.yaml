@@ -9,10 +9,10 @@ services:
       - 8081:80
     depends_on:
       - db
-      - parsoid
+        # - parsoid
     links:
       - db
-      - parsoid
+        # - parsoid
     volumes:
       - ./.htaccess:/var/www/html/.htaccess
       - ./images:/var/www/html/images
@@ -41,12 +41,12 @@ services:
     volumes:
       - ./mariadb/data:/var/lib/mysql
 
-  parsoid:
-    container_name: dtekwiki-parsoid
-    image: thenets/parsoid:0.10.0
-    restart: unless-stopped
-    volumes:
-      - ./run-parsoid.sh:/run-parsoid.sh
-    environment:
-      PARSOID_DOMAIN_dummy: http://dummy
-      PARSOID_NUM_WORKERS: ncpu
+#  parsoid:
+#    container_name: dtekwiki-parsoid
+#    image: thenets/parsoid:0.10.0
+#    restart: unless-stopped
+#    volumes:
+#      - ./run-parsoid.sh:/run-parsoid.sh
+#    environment:
+#      PARSOID_DOMAIN_dummy: http://dummy
+#      PARSOID_NUM_WORKERS: ncpu

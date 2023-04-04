@@ -194,7 +194,7 @@ wfLoadExtension( 'Gadgets' );
 wfLoadExtension( 'ImageMap' );
 wfLoadExtension( 'InputBox' );
 wfLoadExtension( 'Interwiki' );
-wfLoadExtension( 'LocalisationUpdate' );
+# wfLoadExtension( 'LocalisationUpdate' );
 wfLoadExtension( 'MultimediaViewer' );
 wfLoadExtension( 'ParserFunctions' );
 wfLoadExtension( 'PdfHandler' );
@@ -253,16 +253,16 @@ $wgHooks['AbortNewAccount'][] = 'abortOnBadDomain';
 // =======================================================================
 // =======================================================================
 
-wfLoadExtension( 'VisualEditor' );
+// wfLoadExtension( 'VisualEditor' );
 
 // Enable by default for everybody
-$wgDefaultUserOptions['visualeditor-enable'] = 1;
+// $wgDefaultUserOptions['visualeditor-enable'] = 1;
 
-$wgVisualEditorNamespaces = array_merge( $wgContentNamespaces, array( NS_USER, NS_CATEGORY ) );
+// $wgVisualEditorNamespaces = array_merge( $wgContentNamespaces, array( NS_USER, NS_CATEGORY ) );
 
 // Optional: Set VisualEditor as the default for anonymous users
 // otherwise they will have to switch to VE
-$wgDefaultUserOptions['visualeditor-editor'] = "visualeditor";
+// $wgDefaultUserOptions['visualeditor-editor'] = "visualeditor";
 
 // Don't allow users to disable it
 //$wgHiddenPrefs[] = 'visualeditor-enable';
@@ -270,10 +270,10 @@ $wgDefaultUserOptions['visualeditor-editor'] = "visualeditor";
 // OPTIONAL: Enable VisualEditor's experimental code features
 //$wgDefaultUserOptions['visualeditor-enable-experimental'] = 1;
 
-$wgVirtualRestConfig['modules']['parsoid'] = array(
+// $wgVirtualRestConfig['modules']['parsoid'] = array(
     // URL to the Parsoid instance
-    'url' => 'http://parsoid:8000',
-);
+    // 'url' => 'http://parsoid:8000',
+// );
 
 //============================
 // Parsoid for private wikis
@@ -281,7 +281,7 @@ $wgVirtualRestConfig['modules']['parsoid'] = array(
 
 // This feature requires a non-locking session store. The default session store will not work and
 // will cause deadlocks (connection timeouts from Parsoid) when trying to use this feature. Only required for MediaWiki 1.26.x and earlier!
-$wgSessionsInObjectCache = true;
+// $wgSessionsInObjectCache = true;
 
 // Forward users' Cookie: headers to Parsoid. Required for private wikis (login required to read).
 // If the wiki is not private (i.e. $wgGroupPermissions['*']['read'] is true) this configuration
@@ -290,7 +290,7 @@ $wgSessionsInObjectCache = true;
 // WARNING: ONLY enable this on private wikis and ONLY IF you understand the SECURITY IMPLICATIONS
 // of sending Cookie headers to Parsoid over HTTP. For security reasons, it is strongly recommended
 // that $wgVirtualRestConfig['modules']['parsoid']['url'] be pointed to localhost if this setting is enabled.
-$wgVirtualRestConfig['modules']['parsoid']['forwardCookies'] = true;
+// $wgVirtualRestConfig['modules']['parsoid']['forwardCookies'] = true;
 
 /*
 // Load external mediawiki extensions from docker volume
