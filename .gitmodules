@@ -1,7 +1,3 @@
 [submodule "extensions/UserMerge"]
 	path = extensions/UserMerge
 	url = https://github.com/wikimedia/mediawiki-extensions-UserMerge.git
-[submodule "extensions/VisualEditor"]
-	path = extensions/VisualEditor
-  url = https://github.com/wikimedia/mediawiki-extensions-VisualEditor.git
-  branch = REL1_31
