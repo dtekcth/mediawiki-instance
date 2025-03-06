@@ -1,13 +1,12 @@
-FROM mediawiki:1.41.1
+FROM mediawiki:1.43
+ENV MW_REL=REL1_43
 
-WORKDIR /var/www/html/temp
+WORKDIR /var/www/html/extensions
+RUN git clone --depth 1 -b $MW_REL https://gerrit.wikimedia.org/r/mediawiki/extensions/UserMerge
+RUN git clone --depth 1 -b $MW_REL https://gerrit.wikimedia.org/r/mediawiki/extensions/CategoryLockdown
+RUN git clone --depth 1 -b $MW_REL https://gerrit.wikimedia.org/r/mediawiki/extensions/CodeMirror
 
-COPY ./.git ./.git
-COPY ./extensions ./extensions
-
-WORKDIR /var/www/html/temp
-RUN cp extensions/UserMerge ../extensions/UserMerge -r
-# RUN cp extensions/VisualEditor ../extensions/VisualEditor -r
 
 WORKDIR /var/www/html
-RUN rm temp -r
+COPY ./logo.svg ./resources/assets/
+

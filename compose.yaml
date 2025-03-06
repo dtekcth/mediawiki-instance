@@ -1,0 +1,30 @@
+services:
+  mediawiki:
+    build: .
+    ports:
+      - 8080:80
+    depends_on:
+      - db
+
+    volumes:
+      - images:/var/www/html/images
+
+      # After initial setup, download LocalSettings.php to the same directory as
+      # this yaml and uncomment the following line and use compose to restart
+      # the mediawiki service
+      - ./LocalSettings.php:/var/www/html/LocalSettings.php
+      #- ./rewrite.load:/etc/apache2/mods-enabled/rewrite.load
+    
+  db:
+    image: mariadb:latest
+    environment:
+      MYSQL_DATABASE: mediawiki
+      MYSQL_USER: wikiuser
+      MYSQL_PASSWORD: supersecret
+      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+    volumes:
+      - db:/var/lib/mysql
+
+volumes:
+  images:
+  db:

@@ -1,3 +1,0 @@
-[submodule "extensions/UserMerge"]
-	path = extensions/UserMerge
-	url = https://github.com/wikimedia/mediawiki-extensions-UserMerge.git

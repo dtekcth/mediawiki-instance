@@ -1,16 +1,17 @@
-Datas Mediawiki
-=======
+# Datas Mediawiki
 
-Setup
------
+## Setup
 
 To setup your own instance of our mediawiki:
 
 1. clone this repo
+
 ```
 git clone https://github.com/dtekcth/mediawiki-instance.git
 ```
+
 2. Initialize submodules by running
+
 ```bash
 git submodule update --init --recursive
 ```
@@ -30,16 +31,17 @@ Submodule path 'extensions/VisualEditor/lib/ve': checked out 'a64ba1cc623865eaae
 ```
 
 3. The `sensitiveSettings.php.template` needs to be moved to
-`sensitiveSettings.php` and the variables configured properly.
-   * The `$wgSMTP` is optional and is needed if the wiki should be able to send
+   `sensitiveSettings.php` and the variables configured properly.
+
+   - The `$wgSMTP` is optional and is needed if the wiki should be able to send
      email. Useful for verifying emailaddress.
-   * The database settings need to be configured according to the settings you
+   - The database settings need to be configured according to the settings you
      enter during the web-configuration phase later on
      Note: if these settings are changed from the default in the template you also need to change them
      in `docker-compose.yml`
-   * The `$wgSecretKey` needs to be a 64 characters long random string. Mediawiki
+   - The `$wgSecretKey` needs to be a 64 characters long random string. Mediawiki
      uses this for cryptography so make sure this isn't leaked
-   * The `$wgUpgradeKey` is used during the web-configuration phase later on
+   - The `$wgUpgradeKey` is used during the web-configuration phase later on
 
 4. Start the containers with `docker-compose up -d`
 
