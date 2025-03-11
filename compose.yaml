@@ -21,7 +21,9 @@ services:
       MYSQL_DATABASE: mediawiki
       MYSQL_USER: wikiuser
       MYSQL_PASSWORD: supersecret
-      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+      MYSQL_ROOT_PASSWORD: 'megasupersecret'
+    ports:
+      - 3306:3306
     volumes:
       - db:/var/lib/mysql
 

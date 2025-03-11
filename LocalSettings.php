@@ -29,6 +29,7 @@ $wgSitename = "DTEK-wiki";
 ## (like /w/index.php/Page_title to /wiki/Page_title) please see:
 ## https://www.mediawiki.org/wiki/Manual:Short_URL
 $wgScriptPath = "";
+$wgArticlePath = "/wiki/$1";
 
 ## The protocol and server name to use in fully-qualified URLs
 $wgServer = "http://localhost:8080";
@@ -59,8 +60,8 @@ $wgEmailAuthentication = true;
 $wgDBtype = "mysql";
 $wgDBserver = "db";
 $wgDBname = "mediawiki";
-$wgDBuser = "wikiuser";
-$wgDBpassword = "supersecret";
+$wgDBuser = "root";
+$wgDBpassword = "megasupersecret";
 
 # MySQL specific settings
 $wgDBprefix = "";
@@ -145,10 +146,10 @@ wfLoadExtension( 'CategoryLockdown' );
 wfLoadExtension( 'CategoryTree' );
 wfLoadExtension( 'Cite' );
 wfLoadExtension( 'CodeEditor' );
+wfLoadExtension( 'CodeMirror' );
 wfLoadExtension( 'DiscussionTools' );
 wfLoadExtension( 'Echo' );
 wfLoadExtension( 'Gadgets' );
-wfLoadExtension( 'ImageMap' );
 wfLoadExtension( 'InputBox' );
 wfLoadExtension( 'Interwiki' );
 wfLoadExtension( 'Linter' );
@@ -167,3 +168,7 @@ wfLoadExtension( 'WikiEditor' );
 # End of automatically generated settings.
 # Add more configuration options below.
 
+// Enables different displaytitles than pagename
+$wgAllowDisplayTitle = true;
+// Allow names to be not only be normalizations
+$wgRestrictDisplayTitle = false;
