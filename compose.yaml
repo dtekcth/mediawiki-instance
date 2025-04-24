@@ -1,6 +1,14 @@
 services:
   mediawiki:
     build: .
+    environment:
+      DB_HOST: db
+      DB_NAME: mediawiki
+      DB_USER: wikiuser
+      DB_PASS: supersecret
+      MW_SITENAME: DTEK-Wiki
+      MW_SECRET_KEY: "310418962e98bbad54a09c81180c003055845ca7d8ddfb59a8f4a8d674811cd9"
+      MW_UPGRADE_KEY: "1fac3e59c9a7385d"
     ports:
       - 8080:80
     depends_on:

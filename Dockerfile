@@ -1,4 +1,4 @@
-FROM mediawiki:1.43
+FROM mediawiki:1.43.1
 ENV MW_REL=REL1_43
 
 WORKDIR /var/www/html/extensions
@@ -8,5 +8,6 @@ RUN git clone --depth 1 -b $MW_REL https://gerrit.wikimedia.org/r/mediawiki/exte
 
 
 WORKDIR /var/www/html
+COPY ./.htaccess ./
 COPY ./logo.svg ./resources/assets/
 

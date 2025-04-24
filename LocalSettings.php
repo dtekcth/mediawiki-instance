@@ -21,7 +21,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 ## Uncomment this to disable output compression
 # $wgDisableOutputCompression = true;
 
-$wgSitename = "DTEK-wiki";
+$wgSitename = getenv("MW_SITENAME");
 
 ## The URL base path to the directory containing the wiki;
 ## defaults for all runtime URL paths are based off of this.
@@ -32,7 +32,7 @@ $wgScriptPath = "";
 $wgArticlePath = "/wiki/$1";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "http://localhost:8080";
+$wgServer = getenv("MW_URL") ?: "http://localhost:8080";
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
@@ -58,10 +58,14 @@ $wgEmailAuthentication = true;
 
 ## Database settings
 $wgDBtype = "mysql";
-$wgDBserver = "db";
-$wgDBname = "mediawiki";
-$wgDBuser = "root";
-$wgDBpassword = "megasupersecret";
+#$wgDBserver = "db";
+$wgDBserver = getenv("DB_HOST");
+#$wgDBname = "mediawiki";
+$wgDBname = getenv("DB_NAME");
+#$wgDBuser = "root";
+$wgDBuser = getenv("DB_USER");
+#$wgDBpassword = "megasupersecret";
+$wgDBpassword = getenv("DB_PASS");
 
 # MySQL specific settings
 $wgDBprefix = "";
@@ -103,14 +107,14 @@ $wgLocaltimezone = "Europe/Stockholm";
 ## be publicly accessible from the web.
 #$wgCacheDirectory = "$IP/cache";
 
-$wgSecretKey = "310418962e98bbad54a09c81180c003055845ca7d8ddfb59a8f4a8d674811cd9";
+$wgSecretKey = getenv("MW_SECRET_KEY");
 
 # Changing this will log out all existing sessions.
 $wgAuthenticationTokenVersion = "1";
 
 # Site upgrade key. Must be set to a string (default provided) to turn on the
 # web installer while LocalSettings.php is in place
-$wgUpgradeKey = "1fac3e59c9a7385d";
+$wgUpgradeKey = getenv("MW_UPGRADE_KEY");
 
 ## For attaching licensing metadata to pages, and displaying an
 ## appropriate copyright notice / icon. GNU Free Documentation
@@ -126,7 +130,7 @@ $wgDiff3 = "/usr/bin/diff3";
 # The following permissions were set based on your choice in the installer
 $wgGroupPermissions["*"]["createaccount"] = false;
 $wgGroupPermissions["*"]["edit"] = false;
-$wgGroupPermissions["*"]["read"] = false;
+$wgGroupPermissions["*"]["read"] = true;
 
 ## Default skin: you can change the default skin. Use the internal symbolic
 ## names, e.g. 'vector' or 'monobook':
