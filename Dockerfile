@@ -6,6 +6,8 @@ RUN git clone --depth 1 -b $MW_REL https://gerrit.wikimedia.org/r/mediawiki/exte
 RUN git clone --depth 1 -b $MW_REL https://gerrit.wikimedia.org/r/mediawiki/extensions/CategoryLockdown
 RUN git clone --depth 1 -b $MW_REL https://gerrit.wikimedia.org/r/mediawiki/extensions/CodeMirror
 
+WORKDIR /var/www/html/skins
+RUN git clone --depth 1 -b v3.1.0 https://github.com/StarCitizenTools/mediawiki-skins-Citizen.git Citizen
 
 WORKDIR /var/www/html
 COPY ./.htaccess ./
