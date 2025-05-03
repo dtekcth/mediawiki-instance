@@ -10,4 +10,5 @@ RUN git clone --depth 1 -b $MW_REL https://gerrit.wikimedia.org/r/mediawiki/exte
 WORKDIR /var/www/html
 COPY ./.htaccess ./
 COPY ./logo.svg ./resources/assets/
+RUN mv $PHP_INI_DIR/php.ini-production $PHP_INI_DIR/php.ini 
 
