@@ -42,6 +42,11 @@ $wgResourceBasePath = $wgScriptPath;
 $wgLogos = [
 	'1x' => "$wgResourceBasePath/resources/assets/logo.svg",
 	'icon' => "$wgResourceBasePath/resources/assets/logo.svg",
+	'wordmark' => [
+		'src' => "$wgResourceBasePath/resources/assets/wordmark.svg",
+		'height' => 28,
+		'width' => 116,
+	],
 ];
 
 ## UPO means: this is also a user preference option
@@ -140,6 +145,8 @@ $wgDefaultSkin = "vector-2022";
 # The following skins were automatically enabled:
 wfLoadSkin( 'Vector' );
 $wgVectorResponsive = true;
+
+wfLoadSkin( 'Citizen' );
 
 
 # Enabled extensions. Most of the extensions are enabled by adding

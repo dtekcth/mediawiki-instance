@@ -12,6 +12,7 @@ RUN git clone --depth 1 -b v3.1.0 https://github.com/StarCitizenTools/mediawiki-
 WORKDIR /var/www/html
 COPY ./.htaccess ./
 COPY ./logo.svg ./resources/assets/
+COPY ./wordmark.svg ./resources/assets/
 COPY ./favicon.ico ./
 RUN mv $PHP_INI_DIR/php.ini-production $PHP_INI_DIR/php.ini 
 
