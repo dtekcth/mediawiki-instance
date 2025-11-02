@@ -53,3 +53,4 @@ Submodule path 'extensions/VisualEditor/lib/ve': checked out 'a64ba1cc623865eaae
    make it work on another domain. At the moment it redirects you to the
    actually instance setup there. If you need to have more information about
    this contact @hallavad
+
