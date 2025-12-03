@@ -5,9 +5,6 @@ WORKDIR /var/www/html/extensions
 RUN git clone --depth 1 -b $MW_REL https://gerrit.wikimedia.org/r/mediawiki/extensions/UserMerge
 RUN git clone --depth 1 -b $MW_REL https://gerrit.wikimedia.org/r/mediawiki/extensions/CategoryLockdown
 RUN git clone --depth 1 -b $MW_REL https://gerrit.wikimedia.org/r/mediawiki/extensions/CodeMirror
-RUN git clone --depth 1 -b $MW_REL https://gerrit.wikimedia.org/r/mediawiki/extensions/VisualEditor.git
-WORKDIR /var/www/html/extensions/VisualEditor
-RUN git submodule update --init
 
 WORKDIR /var/www/html/skins
 RUN git clone --depth 1 -b v3.10.0 https://github.com/StarCitizenTools/mediawiki-skins-Citizen.git Citizen
