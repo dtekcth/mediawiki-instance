@@ -1,5 +1,5 @@
-FROM mediawiki:1.44.2
-ENV MW_REL=REL1_44
+FROM mediawiki:1.45.3
+ENV MW_REL=REL1_45
 
 WORKDIR /var/www/html/extensions
 RUN git clone --depth 1 -b $MW_REL https://gerrit.wikimedia.org/r/mediawiki/extensions/UserMerge
